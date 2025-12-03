@@ -5,5 +5,20 @@ class ApplicationController < ActionController::Base
   # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
 
+  # Only allows access to json json 
   protect_from_forgery with: :exception, unless: -> { request.format.json? }
+
+  # Requires authentication for controller actions
+  helper_method :current_user
+
+  def current_user
+    User.find_by(id: cookies.signed[:user_id])
+  end
+
+  def authenticate_user
+    unless current_user
+      render json: { errors: "Unauthorized" }, status: :unauthorized
+    end
+  end
+
 end

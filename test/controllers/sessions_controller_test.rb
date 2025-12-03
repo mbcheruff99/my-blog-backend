@@ -12,8 +12,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "destroy" do
-  delete "/sessions.json"
-  assert_response 200
-end
+    delete "/sessions.json"
+    assert_response 200
+  end
 
 end
