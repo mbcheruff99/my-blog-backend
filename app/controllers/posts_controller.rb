@@ -14,6 +14,7 @@ class PostsController < ApplicationController
       title: params[:title],
       body: params[:body],
       image: params[:image],
+      user_id: current_user.id
     )
     if post.save
       render json: post
