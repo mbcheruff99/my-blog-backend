@@ -1,0 +1,28 @@
+Admin
+
+user_id - 7
+name -  m
+email - mbc99
+password - 99
+Cookie - 
+user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik53PT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--3f671e4f756ae78ec85e3e1335690b0441662409; path=/; secure; httponly; samesite=none
+
+---------------
+
+Another admin 
+
+user_id - 8
+name - b
+email - mbc27
+password - 99
+Cookie - user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik9BPT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--c275c40d32cea95d1cf93ba95aadc5169c1023dc; path=/; secure; httponly; samesite=none
+
+--------------
+
+Non admin
+
+user_id - 
+name - c
+email - mbc11
+password 99
+Cookie - user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik9RPT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--96e9ae5e7c68978a50023552b65b39e6df74103b; path=/; secure; httponly; samesite=none

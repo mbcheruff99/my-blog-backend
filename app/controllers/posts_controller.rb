@@ -10,17 +10,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(
-      title: params[:title],
-      body: params[:body],
-      image: params[:image],
-      user_id: current_user.id
-    )
-    if post.save
-      render json: post
+    if current_user.admin
+      post = Post.new(
+        title: params[:title],
+        body: params[:body],
+        image: params[:image],
+        user_id: current_user.id
+      )
+      if post.save
+        render json: post
+      else
+        render json: { errors: post.errors.full_messages }, status: :bad_request
+      end
+
     else
-      render json: { errors: post.errors.full_messages }, status: :bad_request
+      render json: { error: "Unauthorized - must be an admin" }, status: :unauthorized
     end
+
   end
 
   def show
