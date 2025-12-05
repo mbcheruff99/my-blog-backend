@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user, except: [:index, :show] 
-  # before_action :authenticate_user, only: [:delete] 
-  
+  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_admin, only: [:create, :update, :destroy]
 
   def index
     posts = Post.all.order(:id)
@@ -10,23 +9,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user.admin
-      post = Post.new(
-        title: params[:title],
-        body: params[:body],
-        image: params[:image],
-        user_id: current_user.id
-      )
-      if post.save
-        render json: post
-      else
-        render json: { errors: post.errors.full_messages }, status: :bad_request
-      end
-
+    post = Post.new(
+      title: params[:title],
+      body: params[:body],
+      image: params[:image],
+      user_id: current_user.id
+    )
+    if post.save
+      render json: post
     else
-      render json: { error: "Unauthorized - must be an admin" }, status: :unauthorized
+      render json: { errors: post.errors.full_messages }, status: :bad_request
     end
-
   end
 
   def show
