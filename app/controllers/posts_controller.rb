@@ -32,6 +32,7 @@ class PostsController < ApplicationController
     post.title = params[:title] || post.title
     post.body = params[:body] || post.body
     post.image = params[:image] || post.image
+    post.user_id = params[:user_id] || post.user_id
     if post.save
       render json: post
     else
