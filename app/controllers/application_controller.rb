@@ -27,6 +27,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+  def authorize_post_owner
+    post = Post.find(params[:id])
+    unless current_user.admin || post.user_id == current_user.id
+      render json: { message: "You don't have permission to modify this post" }
+    end
+  end
 
 end
