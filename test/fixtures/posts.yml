@@ -4,8 +4,10 @@ one:
   title: MyString
   body: MyText
   image: MyString
+  user_id: 1
 
 two:
   title: MyString
   body: MyText
   image: MyString
+  user_id: 2
