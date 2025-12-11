@@ -1,12 +1,11 @@
 Admin
 
-user_id - 7
-name -  m
-email - mbc99
-password - 99
+user_id - 14
+name -  mb
+email - hey@a
+password - 1
 Cookie - 
-user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik53PT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--3f671e4f756ae78ec85e3e1335690b0441662409; path=/; secure; httponly; samesite=none
-
+user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik1UUT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--30b2a7d54b73cd8ad1a25a8d04af02ee598eae25; path=/; secure; httponly; samesite=none
 ---------------
 
 Another admin 
