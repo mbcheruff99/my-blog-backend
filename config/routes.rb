@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   delete "/sessions" => "sessions#destroy"
 
+  get "/tags" => "tags#index"
+  get "/tags/:id" => "tags#show"
+  post "/tags" => "tags#create"
+  patch "/tags/:id" => "tags#update"
+  delete "/tags/:id" => "tags#destroy"
+
+
 end
