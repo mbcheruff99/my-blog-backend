@@ -6,6 +6,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(:id)
+
+    if params[:tag]   && params[:tag] != ""
+      tag = Tag.find_by(name: params[:tag])
+      @posts = tag.posts
+    end
+    
     render :index
   end
   
